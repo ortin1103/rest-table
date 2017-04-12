@@ -1,7 +1,9 @@
 package com.nitro.entity;
 
 
+import org.springframework.stereotype.Component;
 
+@Component
 public class User {
     String name;
     String displayName;
