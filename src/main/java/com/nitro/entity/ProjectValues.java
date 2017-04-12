@@ -1,26 +1,34 @@
 package com.nitro.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-@JsonIgnoreProperties(ignoreUnknown = true)
 @Component
-public class Repo {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class ProjectValues {
+    User user;
+    String permission;
     String slug;
     long id;
     String name;
-    List<User> users;
 
-    public Repo() {
+    public ProjectValues() {
     }
 
-    public Repo(String slug, long id, String name, List<User> users) {
-        this.slug = slug;
-        this.id = id;
-        this.name = name;
-        this.users = users;
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public String getPermission() {
+        return permission;
+    }
+
+    public void setPermission(String permission) {
+        this.permission = permission;
     }
 
     public String getSlug() {
@@ -45,13 +53,5 @@ public class Repo {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
     }
 }

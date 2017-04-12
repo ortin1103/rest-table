@@ -11,12 +11,12 @@ public class Project {
     String key;
     long id;
     String name;
-    List<ValuesProject> values;
+    List<ProjectValues> values;
 
     public Project() {
     }
 
-    public Project(String key, long id, String name, List<ValuesProject> values) {
+    public Project(String key, long id, String name, List<ProjectValues> values) {
         this.key = key;
         this.id = id;
         this.name = name;
@@ -47,11 +47,11 @@ public class Project {
         this.name = name;
     }
 
-    public List<ValuesProject> getValues() {
+    public List<ProjectValues> getValues() {
         return values;
     }
 
-    public void setValues(List<ValuesProject> values) {
+    public void setValues(List<ProjectValues> values) {
         this.values = values;
     }
 }
