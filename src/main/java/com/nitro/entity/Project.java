@@ -11,16 +11,18 @@ public class Project {
     String key;
     long id;
     String name;
-    List<ProjectValues> values;
+    List<User> users;
+    List<Repo> repos;
 
     public Project() {
     }
 
-    public Project(String key, long id, String name, List<ProjectValues> values) {
+    public Project(String key, long id, String name, List<User> users, List<Repo> repos) {
         this.key = key;
         this.id = id;
         this.name = name;
-        this.values = values;
+        this.users = users;
+        this.repos = repos;
     }
 
     public String getKey() {
@@ -47,11 +49,19 @@ public class Project {
         this.name = name;
     }
 
-    public List<ProjectValues> getValues() {
-        return values;
+    public List<User> getUsers() {
+        return users;
     }
 
-    public void setValues(List<ProjectValues> values) {
-        this.values = values;
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+
+    public List<Repo> getRepos() {
+        return repos;
+    }
+
+    public void setRepos(List<Repo> repos) {
+        this.repos = repos;
     }
 }

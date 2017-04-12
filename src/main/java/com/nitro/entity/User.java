@@ -7,45 +7,25 @@ import org.springframework.stereotype.Component;
 @Component
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
-    String name;
-    String displayName;
-    String emailAddress;
+    UserDetail user;
     String permission;
     long id;
 
     public User() {
     }
 
-    public User(String name, String displayName, String emailAddress, String permission, long id) {
-        this.name = name;
-        this.displayName = displayName;
-        this.emailAddress = emailAddress;
+    public User(UserDetail user, String permission, long id) {
+        this.user = user;
         this.permission = permission;
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public UserDetail getUser() {
+        return user;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDisplayName() {
-        return displayName;
-    }
-
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
-
-    public String getEmailAddress() {
-        return emailAddress;
-    }
-
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
+    public void setUser(UserDetail user) {
+        this.user = user;
     }
 
     public String getPermission() {

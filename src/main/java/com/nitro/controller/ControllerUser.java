@@ -24,9 +24,7 @@ public class ControllerUser {
 
     public String getForm(Model model) {
 
-        model.addAttribute("project",tableService.getRepos());
-
-
+        model.addAttribute("projects",tableService.getProjects());
 
         return "form";
 

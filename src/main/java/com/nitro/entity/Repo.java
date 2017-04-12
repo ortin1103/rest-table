@@ -11,16 +11,16 @@ public class Repo {
     String slug;
     long id;
     String name;
-    List<User> users;
+    List<User> values;
 
     public Repo() {
     }
 
-    public Repo(String slug, long id, String name, List<User> users) {
+    public Repo(String slug, long id, String name, List<User> values) {
         this.slug = slug;
         this.id = id;
         this.name = name;
-        this.users = users;
+        this.values = values;
     }
 
     public String getSlug() {
@@ -47,11 +47,11 @@ public class Repo {
         this.name = name;
     }
 
-    public List<User> getUsers() {
-        return users;
+    public List<User> getValues() {
+        return values;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public void setValues(List<User> values) {
+        this.values = values;
     }
 }
