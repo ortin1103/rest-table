@@ -11,10 +11,15 @@
     <#list allpermission as nameProject,repo>
         <tr>
             <th>${nameProject}</th>
+        <#if nameProject?is_first >
             <th></th>
-            <#list allUsers as users>
-            <th>${users}</th>
-            </#list>
+        </#if>
+            <#if nameProject?is_first >
+                <#list allUsers as users>
+                    <th>${users}</th>
+                </#list>
+            </#if>
+
     </tr>
         <#list repo as nameRepo, resultPermission>
         <tr>
@@ -26,10 +31,6 @@
                 </#list>
         </tr>
         </#list>
-        <tr>
-            <th height="10" style="visibility: hidden"></th>
-        </tr>
-
     </#list>
 </table>
 </body>

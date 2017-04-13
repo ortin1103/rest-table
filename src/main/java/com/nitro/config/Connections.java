@@ -15,7 +15,7 @@ public class Connections {
     public HttpEntity<Object> getConnection() {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-        httpHeaders.add("Authorization", "*****************");
+        httpHeaders.add("Authorization", "***********");
         HttpEntity<Object> entity = new HttpEntity<Object>(httpHeaders);
         return entity;
     }

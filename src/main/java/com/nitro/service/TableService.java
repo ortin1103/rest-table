@@ -18,7 +18,7 @@ public class TableService {
 
     public ResponseProjects getProject() {
 
-        ResponseProjects body = connections.getRestTemplate().exchange("http://stash.riversoft.biz:7990/projects?limit=3", HttpMethod.GET
+        ResponseProjects body = connections.getRestTemplate().exchange("http://stash.riversoft.biz:7990/projects?limit=5", HttpMethod.GET
                 , connections.getConnection(), ResponseProjects.class).getBody();
 
         return body;

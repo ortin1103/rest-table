@@ -82,7 +82,6 @@ public class NewTableServise {
                         }
                     }
                 }
-
                 keyRepoVsUserPermis.put(name1,concatList);
                 keyProjectVsRepo.put(name,keyRepoVsUserPermis);
             }
