@@ -1,6 +1,7 @@
 package com.nitro.controller;
 
 
+import com.nitro.service.NewTableServise;
 import com.nitro.service.TableService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,9 @@ public class ControllerUser {
 
     @Autowired
     TableService tableService;
+    @Autowired
+    NewTableServise newTableServise;
+
 
     @RequestMapping("/")
     public String home(){
@@ -24,7 +28,9 @@ public class ControllerUser {
 
     public String getForm(Model model) {
 
-        model.addAttribute("projects",tableService.getProjects());
+        model.addAttribute("allUsers",newTableServise.getAllUser());
+        model.addAttribute("allpermission", newTableServise.getPermissForTable());
+
 
         return "form";
 

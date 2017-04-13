@@ -1,4 +1,5 @@
-<#--@ftlvariable name="project" type="com.nitro.entity.Project"-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,16 +8,28 @@
 </head>
 <body>
 <table border="1">
-    <#list projects as project>
+    <#list allpermission as nameProject,repo>
         <tr>
-            <td>${project.name}</td>
-            <td></td>
-            <#list project.users as userProject>
-            <td>${userProject.user.name}</td>
+            <th>${nameProject}</th>
+            <th></th>
+            <#list allUsers as users>
+            <th>${users}</th>
             </#list>
-
-
     </tr>
+        <#list repo as nameRepo, resultPermission>
+        <tr>
+
+            <th style="visibility: hidden"></th>
+            <th>${nameRepo}</th>
+                <#list resultPermission as result>
+            <th>${result}</th>
+                </#list>
+        </tr>
+        </#list>
+        <tr>
+            <th height="10" style="visibility: hidden"></th>
+        </tr>
+
     </#list>
 </table>
 </body>
