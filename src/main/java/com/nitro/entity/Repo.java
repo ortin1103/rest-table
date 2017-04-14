@@ -12,6 +12,7 @@ public class Repo {
     long id;
     String name;
     List<User> values;
+    List<String> equailsUsersPermissions;
 
     public Repo() {
     }
@@ -53,5 +54,12 @@ public class Repo {
 
     public void setValues(List<User> values) {
         this.values = values;
+    }
+    public List<String> getEquailsUsersPermissions() {
+        return equailsUsersPermissions;
+    }
+
+    public void setEquailsUsersPermissions(List<String> equailsUsersPermissions) {
+        this.equailsUsersPermissions = equailsUsersPermissions;
     }
 }

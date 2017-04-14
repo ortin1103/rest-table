@@ -40,9 +40,11 @@ public class NewTableServise {
         return allusers;
 
     }
-    public Map<String, Map<String, List<String>>> getPermissForTable(){
+    public List<Project> getPermissForTable(){
         List<Project> projects = tableService.getProjects();
-        Map<String, Map<String, List<String>>> keyProjectVsRepo= new HashMap<>();
+//        Map<String, Map<String, List<String>>> keyProjectVsRepo= new HashMap<>();
+
+        List<Project> listProject =new ArrayList<>(); //create new
 
         Set<String> allUsers = getAllUser();
         int size = allUsers.size();
@@ -50,7 +52,10 @@ public class NewTableServise {
         for(Project project: projects){
             List<Repo> repos = project.getRepos();
             String name = project.getName();
-            Map<String, List<String>> keyRepoVsUserPermis= new HashMap<>();
+//            Map<String, List<String>> keyRepoVsUserPermis= new HashMap<>();
+
+            List <Repo> listRepo=new ArrayList<>();  //create new
+
             for (Repo repo:repos){
 
                 String name1 = repo.getName();
@@ -82,11 +87,16 @@ public class NewTableServise {
                         }
                     }
                 }
-                keyRepoVsUserPermis.put(name1,concatList);
-                keyProjectVsRepo.put(name,keyRepoVsUserPermis);
+                repo.setEquailsUsersPermissions(concatList);   //new
+                listRepo.add(repo);                 //new
+//                keyRepoVsUserPermis.put(name1,concatList);
+//                keyProjectVsRepo.put(name,keyRepoVsUserPermis);
             }
+            project.setRepos(listRepo);
+            listProject.add(project);
+
 
         }
-        return keyProjectVsRepo;
+        return listProject;
     }
 }

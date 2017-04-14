@@ -8,25 +8,25 @@
 </head>
 <body>
 <table border="1">
-    <#list allpermission as nameProject,repo>
+    <#list allpermission as Project>
         <tr>
-            <th>${nameProject}</th>
-        <#if nameProject?is_first >
+            <th>${Project.name}</th>
+        <#if Project?is_first >
             <th></th>
         </#if>
-            <#if nameProject?is_first >
+            <#if Project?is_first >
                 <#list allUsers as users>
                     <th>${users}</th>
                 </#list>
             </#if>
 
     </tr>
-        <#list repo as nameRepo, resultPermission>
+        <#list Project.repos as repo>
         <tr>
 
             <th style="visibility: hidden"></th>
-            <th>${nameRepo}</th>
-                <#list resultPermission as result>
+            <th>${repo.name}</th>
+                <#list repo.equailsUsersPermissions as result>
             <th>${result}</th>
                 </#list>
         </tr>
