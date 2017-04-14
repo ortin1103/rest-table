@@ -13,6 +13,9 @@ public class Project {
     String name;
     List<User> users;
     List<Repo> repos;
+    List<String> equailsProjectUsers;
+
+
 
     public Project() {
     }
@@ -63,5 +66,12 @@ public class Project {
 
     public void setRepos(List<Repo> repos) {
         this.repos = repos;
+    }
+    public List<String> getEquailsProjectUsers() {
+        return equailsProjectUsers;
+    }
+
+    public void setEquailsProjectUsers(List<String> equailsProjectUsers) {
+        this.equailsProjectUsers = equailsProjectUsers;
     }
 }

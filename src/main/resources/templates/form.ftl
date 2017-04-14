@@ -8,19 +8,23 @@
 </head>
 <body>
 <table border="1">
+        <tr>
+            <th style="visibility: hidden"></th>
+            <th style="visibility: hidden"></th>
+        <#list allUsers as users>
+            <th>${users}</th>
+        </#list>
+        </tr>
     <#list allpermission as Project>
         <tr>
             <th>${Project.name}</th>
-        <#if Project?is_first >
             <th></th>
-        </#if>
-            <#if Project?is_first >
-                <#list allUsers as users>
-                    <th>${users}</th>
-                </#list>
-            </#if>
+            <#list Project.equailsProjectUsers as permissionsProjectUser>
+            <th>${permissionsProjectUser}</th>
+            </#list>
 
     </tr>
+
         <#list Project.repos as repo>
         <tr>
 
